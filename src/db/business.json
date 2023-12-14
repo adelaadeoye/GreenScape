@@ -1,0 +1,78 @@
+
+[
+  {
+    "id": 1,
+    "businessName": "Green Harmony Café",
+    "businessImage": "https://thumbs.dreamstime.com/z/indoor-decor-coffee-bean-cafe-flower-harmony-concept-basket-red-ripe-berries-bunch-white-set-up-green-leaf-make-47607076.jpg",
+    "businessDescription": "Green Harmony Café is a serene organic haven that blends delicious fair-trade coffee with sustainable practices. Our menu features a variety of organic and locally sourced treats, creating a delightful experience for both your taste buds and the environment.",
+    "businessWebsites": "https://greenharmonycafe.com",
+    "businessReviews": [
+      {
+        "reviewerName": "Sophie Carter",
+        "reviewerComment": "Beautiful café with a commitment to sustainability. Loved the coffee!",
+        "reviewerRating": 5,
+        "reviewerDonation": 12
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "businessName": "EcoThread Emporium",
+    "businessImage": "https://res.cloudinary.com/jerrick/image/upload/v1682657254/644b4fe632e113001d7a3951.jpg",
+    "businessDescription": "EcoThread Emporium is your one-stop-shop for eco-friendly fashion. We curate a collection of clothing made from sustainable materials, promoting ethical and environmentally conscious choices. Join us in redefining style with a positive impact.",
+    "businessWebsites": "https://ecothreademporium.com",
+    "businessReviews": [
+      {
+        "reviewerName": "Olivia Davis",
+        "reviewerComment": "Found some amazing sustainable pieces here. Love the variety!",
+        "reviewerRating": 4,
+        "reviewerDonation": 8
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "businessName": "SunPower Solutions",
+    "businessImage": "https://sustainablefuturenews.com/wp-content/uploads/2023/07/shutterstock_103759697.jpg",
+    "businessDescription": "SunPower Solutions is a leader in renewable energy, providing state-of-the-art solar solutions for homes and businesses. Our goal is to make sustainable energy accessible to all, helping you power your life while reducing your carbon footprint.",
+    "businessWebsites": "https://sunpowersolutions.com",
+    "businessReviews": [
+      {
+        "reviewerName": "Daniel White",
+        "reviewerComment": "Switched to solar power with SunPower Solutions. Excellent service!",
+        "reviewerRating": 5,
+        "reviewerDonation": 18
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "businessName": "GreenByte Innovations",
+    "businessImage": "https://www.greenjournal.co.uk/wp-content/uploads/2020/02/sustainability-technology.jpg",
+    "businessDescription": "GreenByte Innovations is dedicated to revolutionizing technology with sustainability in mind. From energy-efficient devices to eco-conscious software, we strive to make a positive impact on the tech industry. Join us in shaping a greener future with innovation.",
+    "businessWebsites": "https://greenbyteinnovations.com",
+    "businessReviews": [
+      {
+        "reviewerName": "Emma Turner",
+        "reviewerComment": "Impressive tech innovations with a focus on sustainability!",
+        "reviewerRating": 4,
+        "reviewerDonation": 15
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "businessName": "TechGreens Innovations",
+    "businessImage": "https://miro.medium.com/v2/resize:fit:1400/1*9jAzCtaQ7-K6nv9FU1YJmA.png",
+    "businessDescription": "TechGreens Innovations is at the forefront of green technology, developing cutting-edge solutions for a sustainable future. From smart energy management systems to eco-friendly tech gadgets, we strive to revolutionize the industry. Join us in embracing innovation that contributes to a cleaner and greener planet.",
+    "businessWebsites": "https://techgreensinnovations.com",
+    "businessReviews": [
+      {
+        "reviewerName": "Mark Turner",
+        "reviewerComment": "Impressive innovations in green tech!",
+        "reviewerRating": 4,
+        "reviewerDonation": 15
+      }
+    ]
+  }
+]
