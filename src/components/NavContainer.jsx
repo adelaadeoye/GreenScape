@@ -1,8 +1,10 @@
 import React from "react";
-import { Button, Container, Navbar, Row } from "react-bootstrap";
+import {  Container, Navbar,  } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 
 function NavContainer() {
+  const navigate =  useNavigate();
  
 
 
@@ -10,7 +12,7 @@ function NavContainer() {
     <>
       <Navbar className="navbar navbar-expand-md" style={{ height: "80px" }}>
         <Container fluid>
-          <Navbar.Brand  style={{color:'white', fontSize:30}}>
+          <Navbar.Brand  style={{color:'white', fontSize:30}} onClick={() => navigate("/")}>
             GreenScape
           </Navbar.Brand>
           

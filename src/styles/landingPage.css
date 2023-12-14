@@ -18,3 +18,27 @@
 		line-height: 2;
 	}
 
+	.textSection2 {
+		display: flex;
+		flex-direction: column;
+		align-items: baseline;
+		text-align: left;
+		justify-self: start;
+		}
+		p{
+			line-height: 2;
+		}
+
+	
+	
+
+@media (max-width: 768px) {
+	.textSection{
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: baseline;
+		text-align: left;
+		justify-self: start;
+		}
+	
+}
