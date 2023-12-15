@@ -1,0 +1,19 @@
+.cardContainer {
+  margin-top: -70;
+  margin-bottom: 20;
+}
+.seeMore {
+  cursor: pointer;
+}
+
+.cardImage {
+  transition: all 1s ease;
+}
+.cardImage:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.cardBody {
+  margin-top: -30;
+  padding: 0;
+}
