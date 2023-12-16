@@ -8,6 +8,7 @@
 
 .cardImage {
   transition: all 1s ease;
+
 }
 .cardImage:hover {
   transform: scale(1.2);
@@ -16,4 +17,23 @@
 .cardBody {
   margin-top: -30;
   padding: 0;
+}
+.textP {
+  margin: 0;
+ line-height: normal;
+}
+.inputCont {
+
+  /* position: absolute; */
+
+ display: flex;
+ flex-direction: column;
+  border-radius: 5px;
+}
+.input{
+padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  border: 1px solid grey;
+  margin-top: 200;
+  border-radius: 10px;
 }
