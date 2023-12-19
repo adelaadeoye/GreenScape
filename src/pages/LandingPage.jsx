@@ -63,13 +63,14 @@ export default function LandingPage({paramValues}) {
                 support businesses that are making a positive impact on the
                 environment.
               </p>
-              <Button
+               <Button
                 variant="success"
                 style={{ width: "150px", borderRadius: 20 }}
-                onClick={()=>{navigate("signup")}}
+                onClick={()=>{navigate(paramValues.currentUser===""?"signup":"business")}}
               >
-                Sign Up
+               {paramValues.currentUser===""? "Sign Up":"View"}
               </Button>
+             
             </div>
           </div>
         </Col>

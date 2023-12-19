@@ -54,7 +54,7 @@ function SignUp({paramValues}) {
         navigate("/business")
 			}else{
         setError(
-					{message:"invalid email or password",
+					{message:"invalid email or password or user does not exist",
 					status:true}
 				)
 			}

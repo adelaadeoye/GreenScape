@@ -1,6 +1,6 @@
-import React, { useState,useEffect } from "react";
-import { Container, Navbar } from "react-bootstrap";
-import { useNavigate,useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Container, Navbar,Image } from "react-bootstrap";
+import { useNavigate, useLocation } from "react-router-dom";
 import Settings from "./Settings";
 
 function NavContainer({ paramValues }) {
@@ -9,16 +9,19 @@ function NavContainer({ paramValues }) {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const [showSettings, setShowSettings] = useState(false);
-useEffect(() => {
-  if(paramValues.currentUser==="" &&(!location.pathname.includes("/signin")||location.pathname.includes("/signup"))) {
-    navigate("/")
-  }
-}, [paramValues])
-useEffect(() => {
-},[paramValues.currentUser])
+  useEffect(() => {
+    if (
+      paramValues.currentUser === "" &&
+      (!location.pathname.includes("/signin") ||
+        location.pathname.includes("/signup"))
+    ) {
+      navigate("/");
+    }
+  }, [paramValues]);
+  useEffect(() => {}, [paramValues.currentUser]);
   return (
     <>
-    <Settings paramValues={paramValues} show={show} setShow={setShow}/>
+      <Settings paramValues={paramValues} show={show} setShow={setShow} />
       <Navbar className="navbar navbar-expand-md" style={{ height: "80px" }}>
         <Container fluid>
           <Navbar.Brand
@@ -45,7 +48,13 @@ useEffect(() => {
                   setShowSettings(!showSettings);
                 }}
               >
-                {paramValues.currentUser.email.charAt(0).toUpperCase()}
+                {paramValues.currentUser.image !== "" ? (
+                  <Image src={paramValues.currentUser.image} style={{width: 50,
+                    height: 50,objectFit: "cover", borderRadius:"50%"}} />
+                ) : (
+                  paramValues.currentUser.email.charAt(0).toUpperCase()
+                )}
+                {}
                 <div
                   className="dropdown"
                   style={{
@@ -65,7 +74,7 @@ useEffect(() => {
                     background: "white",
                   }}
                 >
-                  <p onClick={()=>setShow(true)}>Edit profile</p>
+                  <p onClick={() => setShow(true)}>Edit profile</p>
                   <p
                     onClick={() => {
                       paramValues.setCurrentUser("");
@@ -77,7 +86,16 @@ useEffect(() => {
                 </div>
               </div>
             </Navbar.Brand>
-          ):!location.pathname.includes("/signin")&&<Navbar.Brand style={{ color: "white", cursor:'pointer' }} onClick={()=>navigate("/signin")}>Sign In</Navbar.Brand>}
+          ) : (
+            !location.pathname.includes("/signin") && (
+              <Navbar.Brand
+                style={{ color: "white", cursor: "pointer" }}
+                onClick={() => navigate("/signin")}
+              >
+                Sign In
+              </Navbar.Brand>
+            )
+          )}
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </Container>
