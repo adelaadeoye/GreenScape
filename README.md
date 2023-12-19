@@ -4,67 +4,42 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, to run locally you can do the following:
+
+### `npm install` 
+{this is will install all the dependencies}
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The port number might change if port 3000 is already in use.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Deployed Url: https://adelaadeoye.github.io/GreenScape/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+**Technical Decisions:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **React**: The application is built using React, a popular JavaScript library for building user interfaces. React is known for its component-based architecture, making it easy to manage and reuse UI components.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **React-Bootstrap**: React-Bootstrap is used for styling the UI components. Bootstrap provides a set of responsive and customizable components, making it easier to create a visually appealing and consistent user interface.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **React Router**: React Router is employed for client-side routing. It enables navigation between different views in a single-page application (SPA) without triggering a full page reload. The `<Navigate />` component is used for programmatic navigation.
 
-### `npm run eject`
+4. **useState and useEffect Hooks**: These hooks are used to manage state and side effects in functional components. State is utilized to keep track of user information, current user, and business data.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. **JSON Data for Users and Businesses**: User and business data is initially loaded from JSON files (`users.json` and `business.json`). This allows for easy modification and extension of data without the need for a backend server.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. **Moment.js**: Moment.js is used for working with dates and times. It's used to format review dates in a human-readable form.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Challenges:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Data Persistence Issue**: One challenge is that user information and business reviews are not saved when the application is deployed using GitHub Pages. GitHub Pages is a static hosting service, and it does not support server-side operations or persistent storage. To address this, we would need to use a backend service or database for storing user and business data.
 
-## Learn More
+2. **Limited Data Management with useState**: Using `useState` for managing user and business data might become challenging as the application grows. In a real-world scenario, I would likely want to consider using a more robust state management solution, such as Redux, to handle the complexity of state management.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Security Considerations**: In a production environment, handling user authentication and authorization on the client side has security implications. Storing sensitive information on the client can expose it to potential security risks. Implementing a secure authentication solution with server-side validation is recommended for production applications.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To address the data persistence issue, I will consider integrating a backend service (e.g., Node.js with Express) and a database (e.g., MongoDB) to store user and business data. This would enable me to perform CRUD operations and maintain data across different sessions and deployments. Additionally, deploying the backend separately from the frontend will help to ensure a more robust and scalable architecture.

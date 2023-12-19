@@ -28,6 +28,7 @@ const [businesses,setBusinesses]= useState(business)
     <BrowserRouter history={createHistory}>
         <NavContainer paramValues={paramValues} />
       <Container fluid className="App h-100 d-flex flex-column">
+        {/* Routes to the different pages */}
         <Routes>
           <Route path="/" element={<LandingPage  paramValues={paramValues}/>} />
           <Route path="/signup" element={<SignUp paramValues={paramValues}/>} />
