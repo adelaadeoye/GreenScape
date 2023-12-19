@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GreenScape/static/css/main.62ebee23.css",
-    "main.js": "/GreenScape/static/js/main.fb033df5.js",
+    "main.js": "/GreenScape/static/js/main.f2ad7dfb.js",
     "static/js/787.704b5136.chunk.js": "/GreenScape/static/js/787.704b5136.chunk.js",
     "static/media/responsible.jpg": "/GreenScape/static/media/responsible.3d255b6432a6ca6aba8f.jpg",
     "static/media/sustain.jpg": "/GreenScape/static/media/sustain.22646cc37299e831eb6a.jpg",
@@ -10,11 +10,11 @@
     "index.html": "/GreenScape/index.html",
     "static/media/close.svg": "/GreenScape/static/media/close.5bcd0568e97d3b616a5b62059a528e93.svg",
     "main.62ebee23.css.map": "/GreenScape/static/css/main.62ebee23.css.map",
-    "main.fb033df5.js.map": "/GreenScape/static/js/main.fb033df5.js.map",
+    "main.f2ad7dfb.js.map": "/GreenScape/static/js/main.f2ad7dfb.js.map",
     "787.704b5136.chunk.js.map": "/GreenScape/static/js/787.704b5136.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.62ebee23.css",
-    "static/js/main.fb033df5.js"
+    "static/js/main.f2ad7dfb.js"
   ]
 }
