@@ -14,7 +14,8 @@ useEffect(() => {
     navigate("/")
   }
 }, [paramValues])
-
+useEffect(() => {
+},[paramValues.currentUser])
   return (
     <>
     <Settings paramValues={paramValues} show={show} setShow={setShow}/>

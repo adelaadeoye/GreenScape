@@ -10,7 +10,6 @@ export const styles = {
     height: "100%",
   },
   buttonrow: {
-    // marginTop: "50px",
     gap: "10px",
   },
   checkmarkGreenIcon: {
@@ -30,19 +29,42 @@ export const styles = {
     borderBottom: "1px solid #a4a8ad",
   },
 };
-function SignUp() {
+function SignUp({paramValues}) {
   const navigate = useNavigate();
   const [emailPassword, setEmailPassword] = useState({
     email: "",
     password: "",
   });
+  const [error, setError] = useState({
+		message:"",
+		status: false,
+	});
 
 
   const [eyeCrossed, setEyeCrossed] = useState(true);
 
   const handleOnClick = () => navigate("/signup");
 
-  const handleSignUp = () => {};
+  const handleSignIn = () => {
+    const users = paramValues.users
+    const check = users.find(user => user.email === emailPassword.email && user.password === emailPassword.password);
+    if(emailPassword.password!=="" &&emailPassword.email!==""){
+			if(check){
+        paramValues.setCurrentUser(check)
+        navigate("/business")
+			}else{
+        setError(
+					{message:"invalid email or password",
+					status:true}
+				)
+			}
+		}else{
+			setError(
+				{message:"email and password required",
+				status:true}
+			)
+		}
+  };
 
   useEffect(() => {}, []);
 
@@ -58,9 +80,11 @@ function SignUp() {
                 className="inputWithoutBorder"
                 type="email"
                 value={emailPassword.email}
-                onChange={(e) =>
-                  setEmailPassword({ ...emailPassword, email: e.target.value })
-                }
+                onChange={(e) =>{
+									setError({message:"",
+									status: false});
+									setEmailPassword({ ...emailPassword, email: e.target.value })
+								}}
               />
             </InputGroup>
             <label className="label">Password</label>
@@ -69,9 +93,11 @@ function SignUp() {
                 className="inputWithoutBorder"
                 type= {eyeCrossed?"password":"text"}
                 value={emailPassword.password}
-                onChange={(e) =>
-                  setEmailPassword({ ...emailPassword, password: e.target.value })
-                }
+                onChange={(e) =>{
+									setError({message:"",
+									status: false});
+									setEmailPassword({ ...emailPassword, password: e.target.value })
+								}}
               />
 
               <Image
@@ -83,9 +109,11 @@ function SignUp() {
                 onClick={()=>setEyeCrossed(!eyeCrossed)}
               />
             </InputGroup>
+            {error.status &&<p style={{color:"red"}}>{error.message}</p>}
+
             <Row style={styles.buttonrow}>
           <Col>
-            <Button variant="success" className="signInButton"onClick={handleSignUp}>
+            <Button variant="success" className="signInButton"onClick={handleSignIn}>
               SignIn
             </Button>
           </Col>

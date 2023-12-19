@@ -25,34 +25,40 @@ export default function Business({ paramValues }) {
   };
 
   const handleSend = () => {
-    setBusinessList((prevBusinessList) => {
-      const updatedBusinessList = [...prevBusinessList];
+    if(userReview.review===""&&userReview.rating===""&&userReview.donation===""){
+        setShow(false);
 
-      const businessIndex = updatedBusinessList.findIndex(
-        (business) => business.id === selectedBusiness.id
-      );
-
-      const updatedBusiness = { ...updatedBusinessList[businessIndex] };
-      updatedBusiness.businessReviews.push({
-        reviewerName: "Sophie Carter",
-        reviewerComment: userReview.review,
-        reviewerRating: parseInt(userReview.rating)>0?parseInt(userReview.rating):0,
-        reviewerDonation: parseInt(userReview.donation)>0?parseInt(userReview.donation):0,
-        reviewDate: moment().format(""),
-      });
-      updatedBusinessList[businessIndex] = updatedBusiness;
-
-      return updatedBusinessList;
-    });
-
-    setUserReview({
-      review: "",
-      rating: "",
-      donation: "",
-    });
-
-    setShow(false);
-    paramValues.setBusinesses(businessList)
+    }else{
+        setBusinessList((prevBusinessList) => {
+            const updatedBusinessList = [...prevBusinessList];
+      
+            const businessIndex = updatedBusinessList.findIndex(
+              (business) => business.id === selectedBusiness.id
+            );
+      
+            const updatedBusiness = { ...updatedBusinessList[businessIndex] };
+            updatedBusiness.businessReviews.push({
+              reviewerName:paramValues.currentUser.email ,
+              reviewerComment: userReview.review,
+              reviewerRating: parseInt(userReview.rating)>0?parseInt(userReview.rating):0,
+              reviewerDonation: parseInt(userReview.donation)>0?parseInt(userReview.donation):0,
+              reviewDate: moment().format(""),
+            });
+            updatedBusinessList[businessIndex] = updatedBusiness;
+      
+            return updatedBusinessList;
+          });
+      
+          setUserReview({
+            review: "",
+            rating: "",
+            donation: "",
+          });
+      
+          setShow(false);
+          paramValues.setBusinesses(businessList)
+    }
+    
   };
 
   const handleInput = (e, type) => {
