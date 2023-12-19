@@ -6,7 +6,6 @@ import responsible from "../assets/img/responsible.jpg";
 import { useNavigate } from "react-router-dom";
 
 export default function LandingPage({paramValues}) {
-  console.log('users', paramValues.users)
   const navigate =  useNavigate();
   return (
     <>

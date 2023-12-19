@@ -33,15 +33,13 @@ export default function Business({ paramValues }) {
       );
 
       const updatedBusiness = { ...updatedBusinessList[businessIndex] };
-
       updatedBusiness.businessReviews.push({
         reviewerName: "Sophie Carter",
         reviewerComment: userReview.review,
-        reviewerRating: parseInt(userReview.rating),
-        reviewerDonation: parseInt(userReview.donation),
+        reviewerRating: parseInt(userReview.rating)>0?parseInt(userReview.rating):0,
+        reviewerDonation: parseInt(userReview.donation)>0?parseInt(userReview.donation):0,
         reviewDate: moment().format(""),
       });
-      console.log("updatedBusiness", updatedBusiness);
       updatedBusinessList[businessIndex] = updatedBusiness;
 
       return updatedBusinessList;
@@ -54,12 +52,14 @@ export default function Business({ paramValues }) {
     });
 
     setShow(false);
+    paramValues.setBusinesses(businessList)
   };
 
   const handleInput = (e, type) => {
     setUserReview({ ...userReview, [type]: e.target.value });
   };
 
+ 
   return (
     <>
       {selectedBusiness !== "" && (
@@ -92,7 +92,7 @@ export default function Business({ paramValues }) {
               type="number"
               max={5}
               min={0}
-              value={parseInt(userReview.rating)}
+              value={userReview.rating}
               onChange={(e) => {
                 const newValue = Math.min(5, Math.max(0, e.target.value));
                 handleInput({ target: { value: newValue } }, "rating");
@@ -140,7 +140,8 @@ export default function Business({ paramValues }) {
                 rows="3"
                 cols="50"
                 maxLength="200"
-                className="input"
+                style={{border: "1px solid grey", }}
+                className="inputWithoutBorder"
                 placeholder="Please drop a review..."
                 value={userReview.review}
                 onChange={(e) => {

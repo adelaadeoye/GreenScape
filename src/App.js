@@ -14,23 +14,24 @@ const createHistory = require("history").createBrowserHistory;
 function App() {
   const [users,setUsers]= useState(user)
   const [currentUser,setCurrentUser]= useState("")
-
+const [businesses,setBusinesses]= useState(business)
   const paramValues ={
     users: users,
     setUsers: setUsers,
     currentUser: currentUser,
     setCurrentUser: setCurrentUser,
-    business: business
+    business: businesses,
+    setBusinesses:setBusinesses
   }
   
   return (
     <BrowserRouter history={createHistory}>
-        <NavContainer />
+        <NavContainer paramValues={paramValues} />
       <Container fluid className="App h-100 d-flex flex-column">
         <Routes>
           <Route path="/" element={<LandingPage  paramValues={paramValues}/>} />
-          <Route path="/signup" element={<SignUp/>} />
-          <Route path="/signin" element={<SignIn/>} />
+          <Route path="/signup" element={<SignUp paramValues={paramValues}/>} />
+          <Route path="/signin" element={<SignIn paramValues={paramValues}/>} />
           <Route path="*" element={<Navigate to="/" replace />} />
 
           <Route path="/business" element={<Business paramValues={paramValues}/>} />

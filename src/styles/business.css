@@ -30,10 +30,4 @@
  flex-direction: column;
   border-radius: 5px;
 }
-.input{
-padding: 10px;
-  box-sizing: border-box; /* Include padding and border in the width calculation */
-  border: 1px solid grey;
-  margin-top: 200;
-  border-radius: 10px;
-}
+

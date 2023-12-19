@@ -55,7 +55,7 @@ function SignUp() {
             <label className="label">Email</label>
             <InputGroup style={styles.inputGroup}>
               <Form.Control
-                className="input"
+                className="inputWithoutBorder"
                 type="email"
                 value={emailPassword.email}
                 onChange={(e) =>
@@ -66,7 +66,7 @@ function SignUp() {
             <label className="label">Password</label>
             <InputGroup style={styles.inputGroup}>
               <Form.Control
-                className="input"
+                className="inputWithoutBorder"
                 type= {eyeCrossed?"password":"text"}
                 value={emailPassword.password}
                 onChange={(e) =>

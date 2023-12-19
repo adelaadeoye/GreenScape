@@ -1,0 +1,29 @@
+.settingContainer{
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-content: "center";
+align-items: center;
+
+}
+.profileContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profilePicture{
+    width: 200px;
+    height: 200px;
+    border: 1px solid grey;
+    border-radius: 100px;
+    object-fit: cover;
+
+}
+.nameContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}

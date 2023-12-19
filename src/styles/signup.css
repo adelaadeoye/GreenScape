@@ -27,7 +27,7 @@
   font-size: 14px;
   line-height: 20px;
 }
-.input{
+.inputWithoutBorder{
 	border: 0;
   width: 100%;
   border-radius: 0px;
