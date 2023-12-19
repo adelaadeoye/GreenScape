@@ -54,7 +54,7 @@ function NavContainer({ paramValues }) {
                 ) : (
                   paramValues.currentUser.email.charAt(0).toUpperCase()
                 )}
-                {}
+                
                 <div
                   className="dropdown"
                   style={{
